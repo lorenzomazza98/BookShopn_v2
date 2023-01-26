@@ -3,6 +3,7 @@ package bookshopparthenope;
 
 
 import bookshopparthenope.Model.UserManagement.Customer;
+import bookshopparthenope.Model.UserManagement.DBService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,12 +11,16 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Date;
+import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class RegisterController{
@@ -46,7 +51,35 @@ public class RegisterController{
     private TextField registerUsername;
 
     @FXML
-    void registerUser(ActionEvent event) {
+    private Label wrongSignup;
+    @FXML
+    void registerUser(ActionEvent event) throws SQLException, ClassNotFoundException, InterruptedException, IOException {
+
+        if (registerPassword.getText().length() < 5) {
+            wrongSignup.setVisible(true);
+            wrongSignup.setText("Password troppo breve");
+        }else if (registerNome.getText().length() < 1) {
+            wrongSignup.setVisible(true);
+            wrongSignup.setText("Inserisci un nome valido");
+        } else if (registerCognome.getText().length() < 1) {
+            wrongSignup.setVisible(true);
+            wrongSignup.setText("Inserisci un cognome valido");
+       } else if (!registerEmail.getText().contains("@")) {
+            wrongSignup.setVisible(true);
+            wrongSignup.setText("Inserisci una mail valida");
+        } else if (registerUsername.getText().length() < 1) {
+            wrongSignup.setVisible(true);
+            wrongSignup.setText("Inserisci un username valido");
+        }else {
+            Customer cliente = new Customer(registerUsername.getText().toUpperCase(), registerPassword.getText());
+             cliente.setEmail(registerEmail.getText());
+            cliente.setSurname(registerCognome.getText());
+            cliente.setName(registerNome.getText());
+            DBService.insertNewCustomer(cliente);
+            switchToLogin(event);
+
+
+        }
 
     }
 

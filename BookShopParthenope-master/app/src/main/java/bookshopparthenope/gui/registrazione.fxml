@@ -100,5 +100,10 @@
             <Font size="30.0" />
          </font>
       </Button>
+      <Label fx:id="wrongSignup" layoutX="278.0" layoutY="504.0" prefHeight="63.0" prefWidth="288.0" text="Inserisci i dati per registrarti!" textAlignment="CENTER" textFill="#fbb13c" visible="false">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
