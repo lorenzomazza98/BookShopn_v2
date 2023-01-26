@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="580.0" style="-fx-background-color: #5757e4;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="580.0" style="-fx-background-color: #5757e4;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookshopparthenope.RegisterController">
    <children>
       <ImageView fitHeight="364.0" fitWidth="374.0" layoutY="124.0">
          <image>
@@ -34,7 +34,7 @@
                   <Font name="Calibri Bold" size="34.0" />
                </font>
             </Label>
-            <Button layoutX="13.0" layoutY="4.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="45.0" style="-fx-background-color: transparent;" />
+            <Button fx:id="loginButton" layoutX="13.0" layoutY="4.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="47.0" prefWidth="45.0" style="-fx-background-color: transparent;" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="278.0" layoutY="117.0" prefHeight="364.0" prefWidth="288.0">
@@ -46,7 +46,7 @@
                         <Font name="Calibri Bold" size="14.0" />
                      </font>
                   </Label>
-                  <TextField promptText="Username" stylesheets="@fxcss.css">
+                  <TextField fx:id="registerUsername" promptText="Username" stylesheets="@fxcss.css">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -56,7 +56,7 @@
                         <Font name="Calibri Bold" size="14.0" />
                      </font>
                   </Label>
-                  <TextField promptText="Nome" stylesheets="@fxcss.css">
+                  <TextField fx:id="registerNome" promptText="Nome" stylesheets="@fxcss.css">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -66,7 +66,7 @@
                         <Font name="Calibri Bold" size="14.0" />
                      </font>
                   </Label>
-                  <TextField promptText="Cognome" stylesheets="@fxcss.css">
+                  <TextField fx:id="registerCognome" promptText="Cognome" stylesheets="@fxcss.css">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -76,7 +76,7 @@
                         <Font name="Calibri Bold" size="14.0" />
                      </font>
                   </Label>
-                  <TextField prefHeight="34.0" prefWidth="203.0" promptText="E-mail" stylesheets="@fxcss.css">
+                  <TextField fx:id="registerEmail" prefHeight="34.0" prefWidth="203.0" promptText="E-mail" stylesheets="@fxcss.css">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -86,7 +86,7 @@
                         <Font name="Calibri Bold" size="14.0" />
                      </font>
                   </Label>
-                  <PasswordField promptText="Password" stylesheets="@fxcss.css">
+                  <PasswordField fx:id="registerPassword" promptText="Password" stylesheets="@fxcss.css">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -95,7 +95,7 @@
             </VBox>
          </children>
       </AnchorPane>
-      <Button alignment="CENTER" layoutX="343.0" layoutY="488.0" mnemonicParsing="false" prefHeight="82.0" prefWidth="158.0" style="-fx-background-color: #fbb13c;" stylesheets="@fxcss.css" text="Registrati" textAlignment="CENTER">
+      <Button fx:id="registerButton" alignment="CENTER" layoutX="343.0" layoutY="488.0" mnemonicParsing="false" onAction="#registerUser" prefHeight="82.0" prefWidth="158.0" style="-fx-background-color: #fbb13c;" stylesheets="@fxcss.css" text="Registrati" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
