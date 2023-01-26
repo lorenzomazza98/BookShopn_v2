@@ -23,12 +23,14 @@ public class DBService {
             return rs;
         } else return null;
     }
+
     public static ResultSet logInCustomer(String username, String password) throws ClassNotFoundException, SQLException {
+
         String myDriver = "com.mysql.cj.jdbc.Driver";
         String myUrl = "jdbc:mysql://localhost:3306/book_shop";
         Class.forName(myDriver);
         Connection conn = DriverManager.getConnection(myUrl, "root", "");
-        String query = "SELECT * FROM customer where username='" + username + "'" + "and password ='" + password + "'";
+        String query = "SELECT * FROM customer where username='" + username + "'and password ='" + password + "'";
 
         Statement st = conn.prepareStatement(query, ResultSet.TYPE_SCROLL_SENSITIVE,
                 ResultSet.CONCUR_UPDATABLE);

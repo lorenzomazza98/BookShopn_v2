@@ -32,25 +32,5 @@ public class App extends Application {
         primaryStage.getIcons().add(icon);
 
     }
-    /*
-    @Override
-    public void start(Stage stage) throws IOException {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("../../resources/GUI/login.fxml"));
-            Parent root = FXMLLoader.load(LoginController.class.getResource("../../resources/GUI/login.fxml"));
-            Scene scene = new Scene(root);
-            String css = this.getClass().getResource("javacss.css").toExternalForm();
-            scene.getStylesheets().add(css);
-            Image icon = new Image("gui/images/logoapp.png");
-            stage.getIcons().add(icon);
-            stage.setTitle("Book Shop Parthenope");
-            stage.setScene(scene);
-            stage.setResizable(false);
-            stage.show();
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-    }*/
 }

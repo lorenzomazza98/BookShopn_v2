@@ -49,40 +49,54 @@ public class LoginController  implements Initializable {
         Stage window = (Stage) signupButton.getScene().getWindow();
         window.setScene(new Scene(root,580,580));
     }
-    private String[] adminOrCostumerChoiceBox = {"Admin","Costumer"};
+    private String[] adminOrCostumerChoiceBox = {"Admin","Cliente"};
 
 
     @FXML
     void validateLogin(ActionEvent event) throws SQLException, ClassNotFoundException, IOException {
 
-
-        String uname= username.getText();
-        String upass= password.getText();
-        if (uname.equals("") || upass.equals(""))
-        {
+        String uname = username.getText();
+        String upass = password.getText();
+        if (uname.equals("") || upass.equals("")) {
             wrongLogIn.setText("Inserisci tutte le credenziali.");
             wrongLogIn.setVisible(true);
-        }else
-
-        if (loginScelta.getValue() == "Admin") {
-            Admin admin = new Admin(username.getText(), password.getText());
-            admin.logIn();
-            if (!admin.logIn()) {
+        }
+        else {
+            String tipoUtente=loginScelta.getValue();
+            if(tipoUtente== null) {
+                wrongLogIn.setText("Seleziona tipo utente.");
+                wrongLogIn.setVisible(true);
+            }else{
+            switch (tipoUtente){
+            case("Admin"):
+                Admin admin = new Admin(username.getText(), password.getText());
+                if (admin.logIn()) {
+                    tipoUtente="/bookshopparthenope/gui/adminpanel.fxml";}
+                else { tipoUtente="";}
+                break;
+            case("Cliente"):
+                Customer customer = new Customer(username.getText(), password.getText());
+                if (customer.logIn()) {
+                    tipoUtente="/bookshopparthenope/gui/home.fxml";}
+                else { tipoUtente="";System.out.println("aaaa");}
+                break;
+            default:
+                wrongLogIn.setText("Seleziona tipo utente");
+                wrongLogIn.setVisible(true);
+                break;
+            }
+            if (tipoUtente==""){
                 wrongLogIn.setText("Credenziali errate");
                 wrongLogIn.setVisible(true);
-            }else {
-                JOptionPane.showMessageDialog(null,"Login effettuato!");
-                root = FXMLLoader.load(getClass().getResource("/bookshopparthenope/gui/adminpanel.fxml"));
-                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                scene = new Scene(root);
-                stage.setScene(scene);
-                stage.show();
             }
-        } else if (loginScelta.getValue() == null) {
-            wrongLogIn.setText("Seleziona tipo utente.");
-            wrongLogIn.setVisible(true);
+            else{
+            root = FXMLLoader.load(getClass().getResource(tipoUtente));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+            } }
         }
-
     }
 
     @Override

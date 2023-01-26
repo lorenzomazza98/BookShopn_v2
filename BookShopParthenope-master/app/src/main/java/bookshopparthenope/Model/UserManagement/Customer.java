@@ -51,10 +51,7 @@ public class Customer extends User{
 
         if (set != null) {
                 this.username = set.getString(1);
-                this.name = set.getString(2);
-                this.surname = set.getString(3);
-                this.email = set.getString(4);
-                this.password = set.getString(5);
+                this.password = set.getString(2);
                 return true;
         }
         return false;
