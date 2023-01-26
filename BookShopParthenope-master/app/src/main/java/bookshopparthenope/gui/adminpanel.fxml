@@ -14,11 +14,6 @@
    <children>
       <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="54.0" prefWidth="1088.0" style="-fx-background-color: #5757e4; -fx-border-color: BLACK;">
          <children>
-            <Button layoutX="1042.0" layoutY="7.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" style="-fx-border-color: #5757e4; -fx-background-color: #5757e4;" text="x" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Calibri Bold" size="20.0" />
-               </font>
-            </Button>
             <Label layoutX="379.0" layoutY="7.0" text="Book Store Parthenope" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="34.0" />

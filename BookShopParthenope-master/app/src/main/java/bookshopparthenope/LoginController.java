@@ -85,7 +85,7 @@ public class LoginController  implements Initializable {
                 wrongLogIn.setVisible(true);
                 break;
             }
-            if (tipoUtente==""){
+            if (tipoUtente.equals("")){
                 wrongLogIn.setText("Credenziali errate");
                 wrongLogIn.setVisible(true);
             }

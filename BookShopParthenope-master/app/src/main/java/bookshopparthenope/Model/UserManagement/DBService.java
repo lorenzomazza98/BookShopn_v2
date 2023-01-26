@@ -1,4 +1,4 @@
-package bookshopparthenope.Model.UserManagement;;
+package bookshopparthenope.Model.UserManagement;
 
 import java.sql.*;
 
