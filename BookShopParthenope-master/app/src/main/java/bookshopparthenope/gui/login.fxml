@@ -13,6 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+<?import javafx.scene.control.ComboBox?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="447.0" prefWidth="641.0" style="-fx-background-color: #5757e4;" stylesheets="@fxcss.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookshopparthenope.LoginController">
    <children>
       <Canvas height="200.0" width="200.0" />
@@ -41,18 +42,18 @@
                   <Font name="Calibri Bold" size="19.0" />
                </font>
             </Label>
-            <ChoiceBox fx:id="loginScelta" layoutX="39.0" layoutY="61.0" prefHeight="40.0" prefWidth="188.0" stylesheets="@../../resources/GUI/fxcss.css" />
-            <TextField fx:id="username" layoutX="39.0" layoutY="104.0" promptText="Username" stylesheets="@../../resources/GUI/fxcss.css">
+            <ComboBox fx:id="loginScelta" promptText="Tipo Utente" layoutX="39.0" layoutY="61.0" prefHeight="40.0" prefWidth="188.0" stylesheets="@fxcss.css" />
+            <TextField fx:id="username" layoutX="39.0" layoutY="104.0" promptText="Username" stylesheets="@fxcss.css">
                <font>
                   <Font size="15.0" />
                </font>
             </TextField>
-            <PasswordField fx:id="password" layoutX="39.0" layoutY="154.0" promptText="Password" stylesheets="@../../resources/GUI/fxcss.css">
+            <PasswordField fx:id="password" layoutX="39.0" layoutY="154.0" promptText="Password" stylesheets="@fxcss.css">
                <font>
                   <Font size="15.0" />
                </font>
             </PasswordField>
-            <Button fx:id="loginButton" alignment="CENTER" layoutX="50.0" layoutY="197.0" mnemonicParsing="false" onAction="#validateLogin" prefHeight="34.0" prefWidth="165.0" style="-fx-background-color: #fbb13c;" stylesheets="@../../resources/GUI/fxcss.css" text="Accedi" textAlignment="CENTER">
+            <Button fx:id="loginButton" alignment="CENTER" layoutX="50.0" layoutY="197.0" mnemonicParsing="false" onAction="#validateLogin" prefHeight="34.0" prefWidth="165.0" style="-fx-background-color: #fbb13c;" stylesheets="@fxcss.css" text="Accedi" textAlignment="CENTER">
                <font>
                   <Font size="15.0" />
                </font>
@@ -66,7 +67,7 @@
       </AnchorPane>
       <AnchorPane layoutX="429.0" layoutY="333.0" prefHeight="77.0" prefWidth="151.0">
          <children>
-            <Hyperlink fx:id="signupButton" layoutX="17.0" layoutY="39.0" onAction="#switchToSignup" stylesheets="@javacss.css" text="Registrati ora!" textFill="WHITE">
+            <Hyperlink fx:id="signupButton" layoutX="17.0" layoutY="39.0" onAction="#switchToSignup" stylesheets="@fxcss.css" text="Registrati ora!" textFill="WHITE">
                <font>
                   <Font size="17.0" />
                </font>

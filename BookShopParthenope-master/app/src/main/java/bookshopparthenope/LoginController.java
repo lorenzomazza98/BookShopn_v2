@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-//import javax.swing.*;
+import javax.swing.*;
 
 public class LoginController  implements Initializable {
 
@@ -29,7 +29,7 @@ public class LoginController  implements Initializable {
     private Button loginButton;
 
     @FXML
-    private ChoiceBox<String> loginScelta;
+    private ComboBox<String> loginScelta;
 
     @FXML
     private PasswordField password;
@@ -50,7 +50,6 @@ public class LoginController  implements Initializable {
         window.setScene(new Scene(root,580,580));
     }
     private String[] adminOrCostumerChoiceBox = {"Admin","Costumer"};
-//TODO: cambia il choiceBox con un comboBox per avere una scelta placeholder che dice "Seleziona utente"
 
 
     @FXML
@@ -61,7 +60,6 @@ public class LoginController  implements Initializable {
         String upass= password.getText();
         if (uname.equals("") || upass.equals(""))
         {
-            //JOptionPane.showMessageDialog(null,"Inserisci credenziali.");
             wrongLogIn.setText("Inserisci tutte le credenziali.");
             wrongLogIn.setVisible(true);
         }else
@@ -73,16 +71,16 @@ public class LoginController  implements Initializable {
                 wrongLogIn.setText("Credenziali errate");
                 wrongLogIn.setVisible(true);
             }else {
-
+                JOptionPane.showMessageDialog(null,"Login effettuato!");
                 root = FXMLLoader.load(getClass().getResource("/bookshopparthenope/gui/adminpanel.fxml"));
                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                 scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
-
-
-
             }
+        } else if (loginScelta.getValue() == null) {
+            wrongLogIn.setText("Seleziona tipo utente.");
+            wrongLogIn.setVisible(true);
         }
 
     }

@@ -38,7 +38,7 @@
                   <Font name="Calibri Bold" size="34.0" />
                </font>
             </Label>
-            <Button layoutX="45.0" layoutY="562.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="112.0" style="-fx-background-color: #baa280; -fx-border-color: BLACK; color: ;" stylesheets="@fxcss.css" text="Log-out" textFill="WHITE">
+            <Button layoutX="45.0" layoutY="562.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="112.0" style="-fx-background-color: #baa280; -fx-border-color: BLACK; " stylesheets="@fxcss.css" text="Log-out" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="15.0" />
                </font>
